@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1c1c1c;
+  --color-primary-hover: #333333;
+  --color-accent: #d84534; /* subtle red accent inspired by hotel chains */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Georgia', serif;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-[#1c1c1c] font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .booking-bar {
+    @apply bg-white shadow-[0_8px_30px_rgb(0,0,0,0.1)] rounded-lg p-4 md:p-6 flex flex-col md:flex-row gap-4 md:items-end justify-between;
+  }
+  
+  .card {
+    @apply bg-white border border-gray-200 rounded-lg overflow-hidden transition-all duration-300;
+  }
+  
+  .card:hover {
+    @apply shadow-lg -translate-y-1;
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-hover text-white font-medium py-3 px-8 rounded-full transition-all duration-300;
+  }
+  
+  .btn-accent {
+    @apply bg-[var(--color-accent)] hover:bg-[#b03527] text-white font-medium py-3 px-8 rounded-full transition-all duration-300;
+  }
+}
